@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 20px;
+        }
+        
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB); /* Blue gradient background */
+            transition: background-color 0.3s ease;
+            z-index: 1000; /* Ensure it's above other content */
+        }
+        
+        .navigation h1 {
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navigation ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        .navigation ul li {
+            margin-left: 20px;
+        }
+        
+        .navigation ul li a {
+            text-decoration: none;
+            color: white; /* Initial font color */
+            transition: color 0.3s ease;
+        }
+        
+        .navigation ul li a:hover {
+            color: #000; /* Font color on hover */
+        }
+    </style>
+
+
+</head>
+<body>
+    <nav class="navigation">
+        <div class="container">
+            <h1>PRODIGY INFOTECH</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <!-- Your webpage content goes here -->
+    </div>
+
+    <script type="text/javascript">
+        window.addEventListener('scroll', () => {
+            const navigation = document.querySelector('.navigation');
+            if (window.scrollY > 50) {
+                navigation.classList.add('scrolled');
+            } else {
+                navigation.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
